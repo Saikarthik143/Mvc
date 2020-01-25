@@ -1,0 +1,57 @@
+﻿@model HandsOnMVCModelValidation.Models.User
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+@using (Html.BeginForm())
+{
+<table class="table table-bordered">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Name)</td>
+        <td>@Html.TextBoxFor(m => m.Name)</td>
+        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Email)</td>
+        <td>@Html.TextBoxFor(m => m.Email)</td>
+        <td>@Html.ValidationMessageFor(m => m.Email)</td>
+       
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.DOB)</td>
+        <td>@Html.TextBoxFor(m => m.DOB,null,new { @type = "Date" })</td>
+        <td>@Html.ValidationMessageFor(m => m.DOB)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Mobieno)</td>
+        <td>@Html.TextBoxFor(m => m.Mobieno)</td>
+        <td>@Html.ValidationMessageFor(m => m.Mobieno)</td>
+    </tr>
+    <tr>
+        
+        @*<td>
+              @Html.DropDownListFor(m => m.Country,
+        new SelectList(new string[] { "india", "england", "new zeland" }))
+          </td>*@
+        <td>@Html.DisplayNameFor(m => m.Country)</td>
+        <td>@Html.DropDownListFor(m => m.Country, ViewBag.Country as SelectList )</td>
+        <td>@Html.ValidationMessageFor(m => m.Country)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Uname)</td>
+        <td>@Html.TextBoxFor(m => m.Uname)</td>
+        <td>@Html.ValidationMessageFor(m => m.Uname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Pawd)</td>
+        <td>@Html.TextBoxFor(m => m.Pawd)</td>
+        <td>@Html.ValidationMessageFor(m => m.Pawd)</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="register" />
+        </td>
+    </tr>
+</table>
+}

@@ -1,0 +1,26 @@
+﻿@model HandsonModelValidtion.Models.Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+@using (Html.BeginForm())
+{
+<table class="table table-bordered">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Uname)</td>
+        <td>@Html.EditorFor(m => m.Uname)</td>
+        <td>@Html.ValidationMessageFor(m => m.Uname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Pawd)</td>
+        <td>@Html.EditorFor(m => m.Pawd)</td>
+        <td>@Html.ValidationMessageFor(m => m.Pawd)</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="signup" />
+        </td>
+    </tr>
+</table>
+}

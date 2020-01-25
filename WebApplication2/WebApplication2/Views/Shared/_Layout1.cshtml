@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head><body>
+    <center>
+    <h1>Hello Good Morning</h1>
+        </center>
+    <nav class="navbar navbar-inverse navbar-fixedtop">
+        <div class="container">
+            <div class="navbar-header">
+                <h1 style="color:red;">Welcome to Cognizant</h1>
+                <a class="btn-info" href="#">Cts</a>
+            </div>
+
+            @*<div class="navbar-collapse collapse">*@
+            <ul class="nav navbar-nav list-group-horizontal">
+                <li><a href="/Employee/AboutEmployee">home</a></li>
+                <li>@Html.ActionLink("Details","Search","Employee",new { id = 1 })
+                <li><a href="/Employee/List">Company</a></li>
+            </ul>
+        </div>
+        @*</div>*@
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

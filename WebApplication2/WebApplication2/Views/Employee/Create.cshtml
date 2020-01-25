@@ -1,0 +1,31 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+@using (Html.BeginForm())
+{
+@*Name @Html.TextBox("textbox1", "")//standard type 
+    Password:@Html.Password("password")
+    Address:@Html.TextArea("textarea", "Address")
+    Program:@Html.ListBox("l1", new MultiSelectList(new[] { "c#", "htmlk", "css", "js", "Asp", "Asp.net core" }))*@
+
+@*Name @Html.TextBoxFor(m => m.Name, "")
+<br />map it properly
+Password:@Html.PasswordFor(m => m.Id)
+<br />
+Dept:@Html.TextBoxFor(m => m.Dept, "")*@
+@*Program:@Html.ListBoxFor(m=>m. new MultiSelectList(new[] { "c#", "htmlk", "css", "js", "Asp", "Asp.net core" }))*@
+
+@Html.Display("id")<br />
+@Html.DisplayFor(m => m.Id)<br />
+@Html.Display("Name")<br />
+@Html.DisplayFor(m => m.Name)<br />
+@Html.Display("dept")<br />
+@Html.EditorFor(m => m.Dept)<br />
+
+@*@Html.Display("Email")<br />*@
+@Html.DisplayFor(m => m.Email)<br />
+             <input class="btn btn-primary" type="submit"  value="Submit" action="EmployeeController/Create/1" />
+}

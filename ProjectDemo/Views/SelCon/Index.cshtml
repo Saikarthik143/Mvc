@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjectDemo.Model.Seller>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+   <h1>Seller</h1>
+   <table border="1">
+       <tr>
+           <td>Name</td>
+           <td>Mobile</td>
+           <td>ID</td>
+           <td>Company</td>
+           <td>Address</td>
+       </tr>
+
+       @foreach (var sel in Model)
+       {
+           <tr>
+               <td>@sel.Name</td>
+               <td>@sel.Mobile</td>
+               <td>@sel.Id</td>
+               <td>@sel.Company</td>
+               <td>@sel.Address</td>
+
+           </tr>
+       }
+
+       </table>
+</body>
+</html>
