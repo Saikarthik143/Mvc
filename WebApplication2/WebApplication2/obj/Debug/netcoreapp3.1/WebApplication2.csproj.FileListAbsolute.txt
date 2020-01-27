@@ -108,6 +108,7 @@ E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Share
 E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 E:\ASP\WebApplication2\WebApplication2\bin\Debug\netcoreapp3.1\libman.json
 E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Create.cshtml.g.cs
-E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Succes.cshtml.g.cs
 E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\List.cshtml.g.cs
 E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Register.cshtml.g.cs
+E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Success.cshtml.g.cs
+E:\ASP\WebApplication2\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Fail.cshtml.g.cs

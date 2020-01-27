@@ -15,17 +15,18 @@ namespace EmployeeManagement.Controllers
         {
             employeeRepository = emrepository;
         }
-        public ContentResult Search(int? id)
+        public IActionResult Search(int? id)
         {
             int Id = (int)((id == null) ? 1 : id);
 
             Employee emp = employeeRepository.GetEmployee(Id);
-            if (emp != null)
-            {
-                return Content(emp.Id + "\n" + emp.Name + "\n" + emp.Email + "\n " + emp.Dept);
-            }
-            else
-                return Content("Employee does not exist");
+            //if (emp != null)
+            //{
+            //    return Content(emp.Id + "\n" + emp.Name + "\n" + emp.Email + "\n " + emp.Dept);
+            //}
+            //else
+            //    return Content("Employee does not exist");
+            return View(emp);
         }
         public IActionResult Index()
         {
@@ -44,23 +45,32 @@ namespace EmployeeManagement.Controllers
         }
         public IActionResult GetAllEmployees()
         {
-            List<Employee> elist = employeeRepository.Display().Where(e => e.Dept == "cse").ToList();
+            List<Employee> elist = employeeRepository.Display().Where(e => e.Dept==Dept.Accounts).ToList();
             //absolute path to refer a view
             return View("Index", elist);
         }
         
         public IActionResult Create()
         {
-            Employee emp = employeeRepository.GetEmployee(1);
-            return View(emp);
+            //Employee emp = employeeRepository.GetEmployee(1);
+            return View();
         }
         [HttpPost]
-        public IActionResult Create(int id)
+        public IActionResult Create(Employee emp)
         {
-            return View("Succes");
+            if(ModelState.IsValid)
+            {
+                employeeRepository.AddEmployee(emp);
+                return RedirectToAction("Index");
+                
+            }
+            return View();
         }
-      
-        public IActionResult Succes()
+      public IActionResult Fail()
+        {
+            return View();
+        }
+        public IActionResult Success()
         {
             return View();
         }

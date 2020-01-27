@@ -44,7 +44,7 @@ namespace EmployeeManagement
             {
                 endpoints.MapControllerRoute(
                   name: "default",
-                  pattern: "{controller=Employee}/{action=Index}/{Id?}");
+                  pattern: "{controller=Employee}/{action=Create}/{Id?}");
 
                 //endpoints.MapGet("/", async context =>
                 //{

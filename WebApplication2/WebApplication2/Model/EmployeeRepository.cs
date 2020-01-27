@@ -10,9 +10,9 @@ namespace EmployeeManagement.Model
         private List<Employee> employeeList;
         public EmployeeRepository()
         {
-            employeeList = new List<Employee>() { new Employee(1,"Ajay","abc@gmail.com","cse"),
-             new Employee(2,"karthik","abcd@gmail.com","cse"),
-             new Employee(3,"Varma","abcde@gmail.com","cse"),};
+            employeeList = new List<Employee>() { new Employee(1,"Ajay","abc@gmail.com",Dept.Insurance),
+             new Employee(2,"karthik","abcd@gmail.com",Dept.Accounts),
+             new Employee(3,"Varma","abcde@gmail.com",Dept.Insurance),};
         }
         public Employee GetEmployee(int id)
         {
@@ -30,6 +30,7 @@ namespace EmployeeManagement.Model
         }
         public bool AddEmployee(Employee emp)
         {
+            emp.Id = employeeList.Max((e => (e.Id) + 1));
             employeeList.Add(emp);
             return true;
         }
